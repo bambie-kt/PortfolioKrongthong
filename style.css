@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.btn-group {
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  background: #eee;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.btn-dark {
+  background: #333;
+  color: white;
+}
+
+.social-icons img {
+  width: 24px;
+  margin: 1rem 0.3rem;
+}
+
+.about, .experience {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about h3, .experience h3 {
+  color: #666;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.info-box {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.timeline {
+  margin-top: 2rem;
+  border-left: 3px solid #333;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.projects, .contact {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-card h4 {
+  margin-top: 1rem;
+}
+
+.project-card p {
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.contact {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f9f9f9;
+}
+
+.contact h3 {
+  color: #666;
+}
+
+.contact p {
+  max-width: 500px;
+  margin: 1rem auto;
+  font-size: 1rem;
+  color: #555;
+}
+
+.contact-buttons {
+  margin: 1.5rem 0;
+}
+
+.contact-buttons .btn {
+  margin: 0 0.5rem;
+}
+
+.contact .social-icons img {
+  width: 28px;
+  margin: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.contact .social-icons img:hover {
+  transform: scale(1.2);
+}
