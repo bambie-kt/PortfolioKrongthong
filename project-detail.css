@@ -1,0 +1,529 @@
+/*
+    CSS for the project detail page.
+    This stylesheet defines the layout, colors, and typography
+    for a modern and responsive portfolio page.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8fafc;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #2563eb;
+}
+
+/* Project Header */
+.project-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.project-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+.project-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateX(-5px);
+}
+
+.header-content {
+    text-align: center;
+}
+
+.project-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.project-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Project Content */
+.project-content {
+    padding: 4rem 0;
+    position: relative;
+    z-index: 50;
+    background: #f8fafc;
+    margin-top: -3rem;
+    border-radius: 3rem 3rem 0 0;
+    box-shadow: 0 -20px 40px rgba(0,0,0,0.1);
+}
+
+.project-hero-image {
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 100;
+    margin-top: -2rem;
+    padding-top: 2rem;
+    /* Styles to center the image and make it responsive */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Adjusted to match new design */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2); /* Adjusted to match new design */
+    border: 4px solid white; /* Added to match new design */
+}
+
+/* The image-placeholder is no longer needed since we are using a real image */
+.image-placeholder {
+    display: none;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.main-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 20;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section h2 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.section h3 {
+    font-size: 1.5rem;
+    color: #374151;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: #2563eb;
+    border-radius: 2px;
+}
+
+.lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+.feature-list, .solution-list, .challenge-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.feature-list li, .solution-list li, .challenge-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    padding-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-list li:hover, .solution-list li:hover, .challenge-list li:hover {
+    background: #f8fafc;
+    padding-left: 2.5rem;
+}
+
+.feature-list li::before, .solution-list li::before, .challenge-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.highlight-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.highlight-box {
+    background: #f1f5f9;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border-bottom: 4px solid #2563eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.highlight-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.highlight-box h4 {
+    font-size: 1.2rem;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.highlight-box i {
+    font-size: 1.5rem;
+}
+
+.highlight-box p {
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 90px;
+    height: fit-content;
+    z-index: 30;
+}
+
+.sidebar-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.sidebar-card h3 {
+    font-size: 1.2rem;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e5e7eb;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item strong {
+    color: #374151;
+    font-weight: 600;
+}
+
+.info-item span {
+    color: #6b7280;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tech-tag {
+    background: #e0f2fe;
+    color: #0c4a6e;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-links a.primary {
+    background: #2563eb;
+    color: white;
+}
+
+.project-links a.primary:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+.project-links a.secondary {
+    background: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.project-links a.secondary:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Related Projects */
+.related-projects {
+    padding: 5rem 0;
+    position: relative;
+    z-index: 5;
+    background: #f8fafc;
+}
+
+.related-projects h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1f2937;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.related-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.related-image {
+    width: 80px;
+    height: 80px;
+    background: #eef2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.related-image i {
+    font-size: 2.5rem;
+    color: #4f46e5;
+}
+
+.related-card h4 {
+    font-size: 1.2rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.related-card p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.related-link {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    color: #4b5563;
+    transition: all 0.3s ease;
+}
+
+.related-link:hover {
+    background: #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: static;
+        height: auto;
+        z-index: auto;
+    }
+    
+    .project-content {
+        margin-top: -2rem;
+        border-radius: 2rem 2rem 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .main-content {
+        padding: 2rem;
+    }
+    
+    .project-content {
+        margin-top: -1.5rem;
+        padding: 2rem 0;
+    }
+    
+    .project-hero-image {
+        margin-top: -1rem;
+        padding-top: 1rem;
+    }
+}
