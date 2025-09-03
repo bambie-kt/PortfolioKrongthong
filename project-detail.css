@@ -169,13 +169,30 @@ body {
     justify-content: center;
     align-items: center;
 }
+.project-mainn-image {
+     width: 48%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: 1%; 
+    }
 
 .project-main-image {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 20px; /* Adjusted to match new design */
     box-shadow: 0 25px 50px rgba(0,0,0,0.2); /* Adjusted to match new design */
     border: 4px solid white; /* Added to match new design */
+}
+.project-mainn-image {
+    max-width: 55%;
+    height: auto;
+    border-radius: 20px; /* Adjusted to match new design */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2); /* Adjusted to match new design */
+    border: 4px solid white; /* Added to match new design */
+}
+.project-mainn-image {
+    margin-right: 20px;   /* เพิ่มช่องว่างด้านขวาของรูป */
+}
+
+.project-mainn-image:last-child {
+    margin-right: 0;      /* ยกเว้นรูปสุดท้ายไม่ให้เว้นเกินไป */
 }
 
 /* The image-placeholder is no longer needed since we are using a real image */
@@ -372,7 +389,7 @@ body {
 }
 
 .project-links a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
