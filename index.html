@@ -1,594 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio 2025 - Krongthong Ngamwong</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    overflow-x: hidden;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.3);
-}
-
-.hero-content {
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 2rem;
-}
-
-.portfolio-title {
-    font-size: 5rem;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-
-.year-badge {
-    background: #000;
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 2rem;
-    transform: rotate(-5deg);
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 2rem;
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-10px); }
-    60% { transform: translateX(-50%) translateY(-5px); }
-}
-
-/* About Section */
-.about-section {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.profile-container {
-    position: relative;
-}
-
-.profile-image {
-    width: 100%;
-    max-width: 300px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.hello-text {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2563eb;
-    margin-bottom: 1rem;
-}
-
-.name {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #1f2937;
-}
-
-.role {
-    font-size: 1.2rem;
-    color: #6b7280;
-    margin-bottom: 2rem;
-}
-
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4b5563;
-    margin-bottom: 2rem;
-}
-
-.info-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
-
-.info-card {
-    background: #f8fafc;
-    padding: 1.5rem;
-    border-radius: 15px;
-    border-left: 4px solid #2563eb;
-}
-
-.info-card h4 {
-    color: #2563eb;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.info-card p {
-    color: #6b7280;
-    font-size: 0.95rem;
-}
-
-/* Skills Section */
-.skills-section {
-    background: #f8fafc;
-    padding: 4rem 2rem;
-}
-
-.skills-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1f2937;
-    margin-bottom: 3rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.skill-item {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.skill-icon {
-    font-size: 2rem;
-    color: #2563eb;
-    margin-bottom: 1rem;
-}
-
-/* Projects Section - Fixed Layout */
-.projects-section {
-    padding: 5rem 2rem;
-    background: white;
-}
-
-.projects-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-    align-items: start;
-}
-
-.project-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.project-image {
-    width: 100%;
-    height: 240px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    border-bottom: 3px solid #2563eb;
-    flex-shrink: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 2rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
-
-.project-description {
-    font-size: 1rem;
-    color: #6b7280;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-    line-height: 1.6;
-}
-
-.project-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    margin-top: auto;
-}
-
-.project-btn:hover {
-    background: #1e40af;
-    transform: translateY(-2px);
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 5rem 2rem;
-    text-align: center;
-    background: #f8fafc;
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1f2937;
-    margin-bottom: 1rem;
-}
-
-.contact-subtitle {
-    font-size: 1.1rem;
-    color: #4b5563;
-    margin-bottom: 2rem;
-}
-
-.contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem 2rem;
-    margin-bottom: 2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #2563eb;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.contact-item:hover {
-    color: #1e40af;
-}
-
-.contact-item i {
-    font-size: 1.2rem;
-}
-
-.contact-item a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.contact-item a:hover {
-    color: inherit;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 2rem;
-    background: #1f2937;
-    color: #d1d5db;
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .profile-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .portfolio-title {
-        font-size: 3rem;
-    }
-
-    .projects-container {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .project-card {
-        margin: 0 auto;
-        max-width: 100%;
-    }
-    
-    .project-image {
-        height: 200px;
-    }
-}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio 2025 - Krongthong Ngamwong</title>
+  <!-- Minimal black/white theme -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="year-badge">2025</div>
-            <h1 class="portfolio-title">Portfolio</h1>
-            <p class="hero-subtitle">Krongthong Ngamwong | Internship</p>
-           
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <div class="profile-container">
-    <img src="profile.png" alt="Profile Image" class="profile-image">
-</div>
-
-        <div>
-            <h2 class="hello-text">¡HELLO!</h2>
-            <h3 class="name">Krongthong Ngamwong</h3>
-            <p class="role">Internship</p>
-            <p class="about-text">
-               4th-year Information Technology for Digital Industries student at Burapha University. Familiar with basic programming, MS Office 365, and computer development fundamentals. Interested in digital transformation concepts and eager to learn about DX projects and organizational digitalization processes. Seeking a GA (Digital Transformation - DX) internship to gain hands-on experience, contribute to team projects, and develop practical skills in supporting digital transformation initiatives.
-            </p>
-            <p class="about-text">
-                
-            </p>
-        </div>
-    </section>
-
-    <div class="info-cards" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-        <div class="info-card">
-            <h4>Education</h4>
-            <p>Burapha University<br>Faculty of Information Sciences<br>Information Technology for Digital Industry</p>
-        </div>
-        <div class="info-card">
-            <h4>Specialization</h4>
-            <p>UI/UX Design & Research <br>MS Office Suite (Excel, PowerPoint, Word) <br>Tool Google Workspace</p>
-        </div>
-        <div class="info-card">
-            <h4>Experience</h4>
-            <p>Mobile App Design<br>Web Development<br>Data Visualization <br>Microsoft word <br>Microsoft excle</p>
-        </div>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="year-badge">2025</div>
+      <h1 class="portfolio-title">Portfolio</h1>
+      <p class="hero-subtitle">Krongthong Ngamwong | Internship</p>
     </div>
+    <button class="scroll-indicator" aria-label="Scroll to About">
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+  </section>
 
-    <section class="skills-section">
-        <div class="skills-container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-icon"><i class="fab fa-figma"></i></div>
-                    <h4>Figma</h4>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <h4>HTML/CSS</h4>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon"><i class="fab fa-js-square"></i></div>
-                    <h4>JavaScript</h4>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h4>Database</h4>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h4>Power BI</h4>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon"><i class="fa-brands fa-google"></i></div>
-                    <h4>Tool Google Workspace </h4>
-                </div>
-            </div>
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="profile-container">
+      <img src="profile.png" alt="Portrait of Krongthong Ngamwong" class="profile-image"/>
+    </div>
+    <div>
+      <h2 class="hello-text">Hello</h2>
+      <h3 class="name">Krongthong Ngamwong</h3>
+      <p class="role">Internship</p>
+      <p class="about-text">
+        4th-year Information Technology for Digital Industries student at Burapha University.
+        Familiar with basic programming, MS Office 365, and computer development fundamentals.
+        Interested in digital transformation concepts and eager to learn about DX projects and
+        organizational digitalization processes. Seeking a GA (Digital Transformation - DX) internship
+        to gain hands-on experience, contribute to team projects, and develop practical skills in
+        supporting digital transformation initiatives.
+      </p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <h4>Education</h4>
+          <p>Burapha University<br>Faculty of Information Sciences<br>Information Technology for Digital Industry</p>
         </div>
-    </section>
-
-    <section class="projects-section">
-        <div class="projects-container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.jpg" alt="Mee Maid App">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Mee Maid App</h3>
-                        <p class="project-description">Mobile application designed to connect homeowners with professional cleaning services</p>
-                        <a href="project-detail.html" class="project-btn">View Details</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                   <div class="project-image">
-                        <img src="project2.jpg" alt="Sales Analytics Dashboard Example">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Sales Analytics Dashboard Example</h3>
-                        <p class="project-description">Interactive Business Intelligence Dashboard for Sales Performance Analysis</p>
-                        <a href="sales-dashboard.html" class="project-btn">View Details</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project3.jpg" alt="DineUp Restaurant System">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">DineUp Restaurant System</h3>
-                        <p class="project-description">A Full-Stack Web Application for Table Reservations</p>
-                        <a href="dineup.html" class="project-btn">View Details</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                          <img src="project4.jpg" alt="DineUp Restaurant System">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">HelpDesk System</h3>
-                        <p class="project-description">Full-stack web application with modern UI/UX and database integration</p>
-                        <a href="helpdeck.html" class="project-btn">View Details</a>
-                    </div>
-                </div>
-                 <div class="project-card">
-                    <div class="project-image">
-                          <img src="project5.jpg" alt="DineUp Restaurant System">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Google Workspace Project Showcase</h3>
-                        <p class="project-description">Collaborative projects showcasing document creation, data visualization, and workflow management with Google Workspace.</p>
-                        <a href="googleworkspace.html" class="project-btn">View Details</a>
-                    </div>
-            </div>
+        <div class="info-card">
+          <h4>Specialization</h4>
+          <p>UI/UX Design & Research<br>MS Office Suite (Excel, PowerPoint, Word)<br>Google Workspace</p>
         </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="contact-container">
-            <h2 class="contact-title">Get In Touch</h2>
-            <p class="contact-subtitle">Contact Me</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:Ngkrongthong@gmail.com">Ngkrongthong@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/bambie-kt" target="_blank">github.com/bambie-kt</a>
-                </div>
-            </div>
+        <div class="info-card">
+          <h4>Experience</h4>
+          <p>Mobile App Design<br>Web Development<br>Data Visualization</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Smooth scrolling for scroll indicator
-        document.querySelector('.scroll-indicator').addEventListener('click', function() {
-            document.querySelector('.about-section').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    </script>
+  <!-- Skills -->
+  <section class="skills-section" id="skills">
+    <div class="skills-container">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div class="skills-grid">
+        <div class="skill-item"><i class="fab fa-figma skill-icon" aria-hidden="true"></i><h4>Figma</h4></div>
+        <div class="skill-item"><i class="fas fa-code skill-icon" aria-hidden="true"></i><h4>HTML/CSS</h4></div>
+        <div class="skill-item"><i class="fab fa-js-square skill-icon" aria-hidden="true"></i><h4>JavaScript</h4></div>
+        <div class="skill-item"><i class="fa-brands fa-microsoft" aria-hidden="true"></i><h4>Microsoft word excel powerpoint</h4></div>
+        <div class="skill-item"><i class="fas fa-chart-bar skill-icon" aria-hidden="true"></i><h4>Power BI</h4></div>
+        <div class="skill-item"><i class="fa-brands fa-google skill-icon" aria-hidden="true"></i><h4>Google Workspace</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects-section" id="projects">
+    <div class="projects-container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image"><img src="project1.jpg" alt="Mee Maid App preview"/></div>
+          <div class="project-content">
+            <h3 class="project-title">Mee Maid App</h3>
+            <p class="project-description">Mobile application designed to connect homeowners with professional cleaning services</p>
+            <a href="project-detail.html" class="project-btn" aria-label="View details Mee Maid App">View Details</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image"><img src="project2.jpg" alt="Sales Analytics Dashboard preview"/></div>
+          <div class="project-content">
+            <h3 class="project-title">Sales Analytics Dashboard</h3>
+            <p class="project-description">Interactive Business Intelligence Dashboard for Sales Performance Analysis</p>
+            <a href="sales-dashboard.html" class="project-btn" aria-label="View details Sales Analytics Dashboard">View Details</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image"><img src="project3.jpg" alt="DineUp Restaurant System preview"/></div>
+          <div class="project-content">
+            <h3 class="project-title">DineUp Restaurant System</h3>
+            <p class="project-description">A Full-Stack Web Application for Table Reservations</p>
+            <a href="dineup.html" class="project-btn" aria-label="View details DineUp">View Details</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image"><img src="project4.jpg" alt="HelpDesk System preview"/></div>
+          <div class="project-content">
+            <h3 class="project-title">HelpDesk System</h3>
+            <p class="project-description">Full-stack web application with modern UI/UX and database integration</p>
+            <a href="helpdeck.html" class="project-btn" aria-label="View details HelpDesk System">View Details</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image"><img src="project5.jpg" alt="Google Workspace Showcase preview"/></div>
+          <div class="project-content">
+            <h3 class="project-title">Google Workspace Project Showcase</h3>
+            <p class="project-description">Collaborative projects for document creation, dashboards, and workflow management</p>
+            <a href="ggworkspace.html" class="project-btn" aria-label="View details Google Workspace Showcase">View Details</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <h2 class="contact-title">Get In Touch</h2>
+      <p class="contact-subtitle">Contact Me</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:Ngkrongthong@gmail.com">Ngkrongthong@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <a href="https://github.com/bambie-kt" target="_blank" rel="noopener">github.com/bambie-kt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2025 Krongthong Ngamwong. All rights reserved.
+  </footer>
+
+  <script>
+    // Scroll-down button
+    document.querySelector('.scroll-indicator').addEventListener('click', function () {
+      document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
