@@ -1,0 +1,97 @@
+
+/* ==== Krongthong Portfolio — Modern Minimal Theme ==== */
+:root{
+  --bg:#0b0c0f;         /* page background (dark mode) */
+  --panel:#121317;      /* cards/nav */
+  --text:#e5e7eb;       /* main text */
+  --muted:#9aa0a6;      /* secondary text */
+  --brand:#60a5fa;      /* accent blue */
+  --brand-2:#22d3ee;    /* secondary accent (teal) */
+  --ring:2px solid rgba(96,165,250,.45);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.7 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;border-radius:12px}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* Navbar */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,12,15,.7);
+  backdrop-filter: blur(6px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;}
+.brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-block}
+.menu{display:flex;gap:18px;align-items:center}
+.menu a{padding:8px 10px;border-radius:8px;color:var(--muted)}
+.menu a:hover,.menu a:focus-visible{outline:none;background:rgba(255,255,255,.06);color:#fff}
+
+/* Buttons */
+.btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-weight:700;border:1px solid rgba(255,255,255,.12);transition:.2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0c0f;border-color:transparent}
+.btn.ghost{background:transparent}
+
+/* Hero */
+.hero{padding:72px 0 48px;background:radial-gradient(1200px 500px at 50% -10%,#1a1b20 0%, transparent 70%)}
+.hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
+.hero h1{font-size:42px;line-height:1.1;margin:8px 0 12px}
+.subtitle{color:var(--muted);font-size:18px;margin-bottom:16px}
+.hero .cta{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.badge{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:14px}
+
+/* Sections */
+.section{padding:56px 0;border-top:1px solid rgba(255,255,255,.06)}
+.section h2{font-size:28px;margin:0 0 12px}
+.section p.lead{color:var(--muted);margin-top:0}
+
+/* Projects Grid */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.card .cover img{aspect-ratio:16/10;object-fit:cover;border-radius:0}
+.card .content{padding:16px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.card .foot{display:flex;gap:10px;padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);margin-top:auto}
+
+/* Project page */
+.proj-hero{padding:56px 0 24px}
+.breadcrumbs{display:flex;gap:8px;color:var(--muted);font-size:14px;margin-bottom:6px}
+.proj-title{font-size:34px;margin:6px 0 12px}
+.kv{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+
+.grid-2{display:grid;grid-template-columns: 1.1fr .9fr;gap:24px;margin-top:20px}
+.panel{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px}
+.panel h3{margin-top:0}
+.list{margin:0 0 0 1.1rem}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.meta .chip{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);font-size:13px}
+
+/* Footer */
+.footer{padding:36px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero .grid{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr 1fr}
+  .grid-2{grid-template-columns:1fr}
+}
+@media (max-width: 600px){
+  .projects{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+/* Focus styles */
+:focus-visible{outline:var(--ring);outline-offset:2px}
